@@ -41,3 +41,6 @@ npm install
 
 npm run dev
 
+
+### Link deploy
+https://venerable-trifle-942cfd.netlify.app 
