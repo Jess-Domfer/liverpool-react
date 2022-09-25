@@ -7,6 +7,7 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { LocalOffer } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export const ProductCard = ({ id, title, url, price, date, description }) => {
   return (
@@ -30,6 +31,7 @@ export const ProductCard = ({ id, title, url, price, date, description }) => {
         <Typography variant="body2" color="text.secondary">
           {price.amount}
         </Typography>
+        <Link to={`product/${id}`}>Más..</Link>
       </CardActions>
     </Card>
   );

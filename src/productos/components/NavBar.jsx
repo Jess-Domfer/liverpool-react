@@ -42,7 +42,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
               maxWidth: { xs: 350, md: 250 },
             }}
             alt="Logo liverpool"
-            src="src/assets/images/liverpool-logo.svg"
+            src="/src/assets/images/liverpool-logo.svg"
           />
           <IconButton color="inherit" onClick={onLogout}>
             <LogoutOutlined />
