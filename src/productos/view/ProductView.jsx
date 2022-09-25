@@ -1,8 +1,12 @@
 import { SaveOutlined } from "@mui/icons-material";
 import { Button, Grid, TextField, Typography } from "@mui/material";
+import { useFetchProducts } from "../../hooks";
+import { Loading } from "../../ui/components";
 import { ProductsList } from "../components";
 
 export const ProductView = () => {
+  const { products, isLoading } = useFetchProducts();
+
   return (
     <Grid
       container
@@ -11,8 +15,7 @@ export const ProductView = () => {
       alignItems="center"
       sx={{ mb: 1 }}
     >
-      <Grid container></Grid>
-      <ProductsList />
+      {isLoading ? <Loading /> : <ProductsList products={products} />}
     </Grid>
   );
 };

@@ -11,8 +11,17 @@ import { Link } from "react-router-dom";
 
 export const ProductCard = ({ id, title, url, price, date, description }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader title={title} subheader={date} />
+    <Card sx={{ maxWidth: 345 }} className=" animate__fadeInUp">
+      <CardHeader title={title} />
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <LocalOffer />
+        </IconButton>
+        <Typography variant="h5" color="text.secondary" sx={{ margin: 2 }}>
+          ${price.amount}.00
+        </Typography>
+      </CardActions>
+
       <CardMedia
         component="img"
         height="194"
@@ -24,14 +33,8 @@ export const ProductCard = ({ id, title, url, price, date, description }) => {
           {description}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <LocalOffer />
-        </IconButton>
-        <Typography variant="body2" color="text.secondary">
-          {price.amount}
-        </Typography>
-        <Link to={`product/${id}`}>Más..</Link>
+      <CardActions disableSpacing sx={{ margin: 2 }}>
+        <Link to={`product/${id}`}>Más información..</Link>
       </CardActions>
     </Card>
   );

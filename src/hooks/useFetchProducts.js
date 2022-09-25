@@ -7,6 +7,7 @@ export const useFetchProducts = () => {
 
   const getProductInfo = async () => {
     const newProducts = await getProducts("valorant");
+
     setProducts(newProducts);
     setIsLoading(false);
   };

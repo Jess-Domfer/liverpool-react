@@ -2,7 +2,6 @@ export const getProductById = async (id) => {
   const url = `https://api.giphy.com/v1/gifs/${id}?api_key=buOOHjlmXcXyW8zLmoiIoxhrAcJScE3T&`;
   const resp = await fetch(url);
   const { data } = await resp.json();
-  console.log(data);
 
   return {
     id: data.id,
