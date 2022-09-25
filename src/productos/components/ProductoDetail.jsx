@@ -2,13 +2,14 @@ import {
   Card,
   CardMedia,
   Grid,
+  styled,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
-  TableRow,
-} from "@mui/material";
+  TableRow
+} from '@mui/material';
 
 export const ProductoDetail = ({
   id,
@@ -16,15 +17,25 @@ export const ProductoDetail = ({
   description,
   price,
   unit,
-  image,
+  image
 }) => {
+
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+      border: 0,
+    },
+  }));
+
   return (
     <Grid
       container
       className="animate__animated animate__fadeInLeft"
       direction="row"
-      justifyContent="center"
-    >
+      justifyContent="center">
       <Grid item>
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
@@ -40,26 +51,34 @@ export const ProductoDetail = ({
           <Table aria-label="customized table">
             <TableHead></TableHead>
             <TableBody>
-              <TableRow>
-                Producto
+              <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                <TableCell component="th" scope="row">
+                  Producto
+                </TableCell>
                 <TableCell component="th" scope="row">
                   {product}
                 </TableCell>
               </TableRow>
               <TableRow>
-                Descripción
+                <TableCell component="th" scope="row">
+                  Descripción
+                </TableCell>
                 <TableCell component="th" scope="row">
                   {description}
                 </TableCell>
               </TableRow>
               <TableRow>
-                Precio
                 <TableCell component="th" scope="row">
-                  {price.amount}
+                  Precio
+                </TableCell>
+                <TableCell component="th" scope="row">
+                  {`$ ${price.amount}.00`}
                 </TableCell>
               </TableRow>
               <TableRow>
-                Unidades
+                <TableCell component="th" scope="row">
+                  Unidades
+                </TableCell>
                 <TableCell component="th" scope="row">
                   {unit}
                 </TableCell>

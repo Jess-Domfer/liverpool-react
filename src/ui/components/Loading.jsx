@@ -4,7 +4,7 @@ import React from "react";
 export const Loading = () => {
   return (
     <Grid container direction="row" justifyContent="center">
-      <CircularProgress color="warning" />
+      <CircularProgress color="primary" />
     </Grid>
   );
 };
