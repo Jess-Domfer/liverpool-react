@@ -1,21 +1,27 @@
 import { AppBar, Toolbar, IconButton, Grid, Box } from '@mui/material';
 import { LogoutOutlined, MenuOutlined } from '@mui/icons-material';
-import React from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { startLogout } from '../../store/auth';
 
-export const NavBar = ({ drawerWidth = 240, actions = true }) => {
+export const NavBar = ({ drawerWidth = 240, actions = true, onChangeSide }) => {
+	const [showSide, setShowSide] = useState(false);
 	const dispatch = useDispatch();
 
 	const onLogout = () => {
 		dispatch(startLogout());
 	};
 
+	const onChangeShowSide = () => {
+		setShowSide(true);
+		onChangeSide(showSide);
+	};
+
 	return (
 		<AppBar position="fixed" xs={{}}>
 			<Toolbar>
 				{actions ? (
-					<IconButton color="inherit">
+					<IconButton color="inherit" onClick={onChangeShowSide}>
 						<MenuOutlined />
 					</IconButton>
 				) : null}
