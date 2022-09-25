@@ -1,4 +1,3 @@
-export * from "./SliderBar";
-export * from "./ProductCard";
-export * from "./ProductsList";
-export * from "./ProductoDetail";
+export * from './ProductCard';
+export * from './ProductsList';
+export * from './ProductoDetail';

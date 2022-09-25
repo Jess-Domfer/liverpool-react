@@ -5,7 +5,6 @@ import {
 	updateProfile,
 	signInWithEmailAndPassword
 } from 'firebase/auth';
-import { checkingCredentials } from '../store/auth';
 import { FirebaseAuth } from './config';
 
 const googleProvider = new GoogleAuthProvider();
